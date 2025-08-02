@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Home - Alessandro Febbrai</title>
-</head>
-<body>
-  <h1>Home page</h1>
-  <p>Language selected: {{ lang }}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Home - Alessandro Febbrai{% endblock %}
+
+{% block content %}
+  <h1>Welcome to my portfolio</h1>
+
+
+  <ul class="sections">
+    <li><a href="/about?lang={{ lang }}">🧍 About Me</a></li>
+    <li><a href="/studies?lang={{ lang }}">📚 Studies</a></li>
+    <li><a href="/projects?lang={{ lang }}">🛠️ Projects</a></li>
+    <li><a href="/experience?lang={{ lang }}">💼 Experience</a></li>
+    <li><a href="/certifications?lang={{ lang }}">📜 Certifications</a></li>
+  </ul>
+{% endblock %}

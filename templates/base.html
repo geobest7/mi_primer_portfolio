@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ lang if lang else 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Alessandro Febbrai{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="left">
+      <a href="/home?lang={{ lang }}">Alessandro Febbrai</a>
+      <a href="/home?lang={{ lang }}" class="home-link">Home</a>
+    </div>
+    <div class="right dropdown">
+      <a>🌐</a>
+      <div class="dropdown-content">
+        <a href="?lang=en"><img class="lang-icon" src="{{ url_for('static', filename='img/en.png') }}" alt="EN"> English</a>
+        <a href="?lang=es"><img class="lang-icon" src="{{ url_for('static', filename='img/es.png') }}" alt="ES"> Español</a>
+        <a href="?lang=ca"><img class="lang-icon" src="{{ url_for('static', filename='img/ca.png') }}" alt="CA"> Català</a>
+        <a href="?lang=it"><img class="lang-icon" src="{{ url_for('static', filename='img/it.png') }}" alt="IT"> Italiano</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="content">
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>
